@@ -1,6 +1,6 @@
 # CountYourSteps
 
-A 2D game made with Unity. Built for Crescent (Hack Club).
+A 2D game made with Unity.
 
 Every move is a step. The portal is ten steps away and your step counter keeps
 draining — reach it before it hits zero.
