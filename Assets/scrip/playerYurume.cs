@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayeYurume : MonoBehaviour
 {
@@ -10,12 +11,14 @@ public class PlayeYurume : MonoBehaviour
     public int maxX = 3;
     public int minY = -5;
     public int maxY = 4;
+    public PortalTrigger portal;
+    public adımSay counter;
 
     [Header("Animasyon")]
     public Animator anim;
 
     [Header("Hareket")]
-    public float moveDuration = 0.3f;   // bir kareye gecis suresi (saniye)
+    public float moveDuration = 0.3f;
 
     public bool canMove = true;
     public Vector2Int Cell { get; private set; }
@@ -60,7 +63,12 @@ public class PlayeYurume : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) dir = Vector2Int.left;
         else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) dir = Vector2Int.right;
 
-        if (dir != Vector2Int.zero) TryMove(dir);
+        if (dir == Vector2Int.zero) return;
+        Vector2Int hedef = Cell + dir;
+        //if (portal != null && counter != null && hedef == portal.Cell && counter.StepsLeft > 1)
+        //    return;
+
+        TryMove(dir);
     }
 
     void TryMove(Vector2Int dir)

@@ -1805,6 +1805,7 @@ MonoBehaviour:
   counter: {fileID: 1240986722}
   portal: {fileID: 1524053040}
   winSceneName: Kazandin
+  loseSceneName: Kaybettin
 --- !u!4 &826543092
 Transform:
   m_ObjectHideFlags: 0
@@ -1856,6 +1857,8 @@ MonoBehaviour:
   maxX: 8
   minY: 2
   maxY: 11
+  portal: {fileID: 1524053040}
+  counter: {fileID: 1384219883}
   anim: {fileID: 1240986725}
   moveDuration: 0.3
   canMove: 1
@@ -2172,6 +2175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 756d054f23f8d934487dc227e764e29b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PortalTrigger
+  cellSize: 32
 --- !u!1 &1575390724
 GameObject:
   m_ObjectHideFlags: 0
