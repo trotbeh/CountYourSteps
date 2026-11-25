@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     public string winSceneName = "Kazandin";
     public string loseSceneName = "Kaybettin";
+    public string sonrakiSahne = "";
 
     public bool IsOver { get; private set; }
     public bool Won { get; private set; }
@@ -41,6 +42,8 @@ public class GameManager : MonoBehaviour
         IsOver = true;
         Won = true;
         if (player != null) player.canMove = false;
+
+        SonucEkrani.sonrakiSahne = sonrakiSahne;
         Invoke("KazanSahnesineGit" , 0.5f);
     }
     void KazanSahnesineGit()

@@ -23,6 +23,6 @@ public class HUD : MonoBehaviour
 
     void OnStepsChanged(int value)
     {
-        if (stepsText != null) stepsText.text = " " + value;
+        if (stepsText != null) stepsText.text = "   " + value;
     }
 }

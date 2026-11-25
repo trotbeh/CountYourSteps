@@ -65,15 +65,24 @@ public class PlayeYurume : MonoBehaviour
 
         if (dir == Vector2Int.zero) return;
         Vector2Int hedef = Cell + dir;
-        //if (portal != null && counter != null && hedef == portal.Cell && counter.StepsLeft > 1)
-        //    return;
+        if (portal != null && counter != null && hedef == portal.Cell && counter.StepsLeft > 1)
+           return;
 
         TryMove(dir);
     }
 
     void TryMove(Vector2Int dir)
     {
+        
         Vector2Int next = Cell + dir;
+
+
+        if (portal != null && counter != null && next == portal.Cell)
+        {
+            if (counter.StepsLeft > 1) return;
+            if (portal.butonGerekli && !portal.acik) return;
+
+        }
       
         if (next.x < minX || next.x > maxX || next.y < minY || next.y > maxY) return;
 
